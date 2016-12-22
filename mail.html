@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<style>
+		.spacing{
+			margin:8px 8px 8px 8px;
+			padding:8px 16px 8px 16px;
+		}
+		button {
+			background-color:green;
+			color:white;
+			border:none;
+		}
+		</style>
+	</head>
+
+
+	<body>
+		<form class="spacing" name="myform" action="javascript:validate();">
+			<table cellspacing="5px" cellpadding="10px">
+			<tr>
+				<td><label>Enter email</label></td>
+				<td><input class="spacing" id="email" type="text"><br/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<center><button class="spacing" onclick="validate();">Validate</button><br/>
+				</td>
+			</tr>
+			</table>
+		</form>
+		<h3 class="spacing" style="color:red" id="output"></h3>
+	</body>
+
+
+	<script>
+		function validate(){
+			var email = document.getElementById("email").value;
+			var output = document.getElementById("output");
+
+			if(email.length == 0){
+				output.innerHTML = "Fill in the email";
+        return;
+			}
+
+      email = email.split("@");
+      if(email.length != 2 || email[0].length == 0 || email[1].length == 0){
+        output.innerHTML = "Wrong format";
+        return;
+      }
+
+      var domain = email[1];
+      domain = domain.split(".");
+      if(domain.length != 2 || domain[0].length == 0 || domain[1].length == 0){
+        output.innerHTML = "Wrong format";
+        return;
+      }
+
+      output.innerHTML = "Valid Email"
+
+		}
+	</script>
+</html>

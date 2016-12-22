@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<body>
+<script language="javascript">
+var number=prompt("enter a number");
+		var s,add=0;
+		s=number;
+		while(number!=0)
+		{
+			add+=Math.floor(Math.pow(number%10,3));
+			number=Math.floor(number/10);
+		}
+			if(add==s)
+			{
+				document.writeln("ARMSTRONG");
+			}
+			else
+			{
+				document.writeln(" NOT ARMSTRONG");
+			}
+	
+</script>
+</body>
+</html>

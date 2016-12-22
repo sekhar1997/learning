@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Form Validation</title>
+		<script>
+			function validate()
+			{
+				username=document.getElementById("username").value;
+				if(username.length<6)
+				{
+					window.alert("username length cannot be less than 6");
+					return;
+				}
+				password=document.getElementById("password").value;
+				cpassword=document.getElementById("confirm_password").value;
+				if(password!=cpassword)
+					window.alert("Passwords Mismatch");
+				else
+					window.alert("Successfully Registered")
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<form>
+				<label>User Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" id="username"><br><br>
+				<label>Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="password" id="password"><br><br>
+				<label>Confirm Password:</label>
+				<input type="password" id="confirm_password"><br><br>
+				<input type="submit" value="Register" onclick="validate()">
+			</form>
+		</center>
+	</body>
+	</html>
